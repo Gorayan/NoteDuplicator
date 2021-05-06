@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "noteduplicator",
+  "version": "${version}",
+  "name": "Noteduplicator",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/noteduplicator/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "net.gorayan.mc.noteduplicator.client.NoteduplicatorClient"
+    ],
+    "main": [
+      "net.gorayan.mc.noteduplicator.Noteduplicator"
+    ]
+  },
+  "mixins": [
+    "noteduplicator.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.11.3",
+    "fabric": "*",
+    "minecraft": "1.16.5"
+  }
+}
