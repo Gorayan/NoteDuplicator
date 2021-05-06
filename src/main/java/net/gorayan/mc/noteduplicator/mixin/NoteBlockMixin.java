@@ -7,6 +7,7 @@ import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.BlockView;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -26,7 +27,7 @@ public class NoteBlockMixin {
         int i = compoundTag.getInt("note");
 
         BlockState blockState = cir.getReturnValue();
-        cir.setReturnValue(blockState.with(NoteBlock.NOTE, i));
+        cir.setReturnValue(blockState.with(NoteBlock.NOTE, MathHelper.clamp(i, 0, 24)));
 
     }
 
